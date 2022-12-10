@@ -25,7 +25,7 @@ main <- function(){
 lay_basic_gdp <- function(input_data){
   output<- input_data %>% 
     ggplot2::ggplot(mapping = ggplot2::aes(x=year,
-                                           y=per_capita,
+                                           y=per_capita*10^5,
                                            color=country))
   return(output)
 }
