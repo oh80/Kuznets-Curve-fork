@@ -1,7 +1,7 @@
 library(magrittr)
 
 main <- function(){
-  #use_rstan_packcage()
+  use_rstan_packcage()
   data <- basics$read_interim("master")
   
   J_data <- extract_Japan_data(data) %>% 
@@ -15,8 +15,8 @@ main <- function(){
   J_result <- rstan::extract(J_fit)
   U_result <- rstan::extract(U_fit)
   
-  save_result(J_result.obj)
-  save_result(U_result.obj)
+  save_J_result(J_result)
+  save_U_result(U_result)
 }
 
 use_rstan_packcage <- function(){
@@ -44,15 +44,19 @@ prepare_run_model <- function(input){
 }
 
 run_model <- function(input){
-  model_path <- "04_analyze/analize/code/model.stan"
+  model_path <- "04_analyze/analyze/code/model.stan"
   fit <- rstan::stan(file=model_path,data=input,seed=123)
   return(fit)
 }
 
-save_result(input){
-  here::here("04_analyze")
-  saveRDS(input,
-          file ="04_analyze/analize/output/")
+save_J_result <-function(input){
+  path <- "04_analyze/analyze/output/J_result.obj"
+  saveRDS(input,file = path)
+}
+
+save_U_result<-function(input){
+  path <- "04_analyze/analyze/output/U_result.obj"
+  saveRDS(input,file =path)
 }
 
 main()
