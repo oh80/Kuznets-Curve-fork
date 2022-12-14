@@ -65,12 +65,7 @@ plot_summary_table <- function(input_data){
                     booktabs = TRUE,
                     format = "latex") %>% 
     kableExtra::kable_styling(font_size = 15) %>% 
-    kableExtra::add_header_above(c(" "=1,"GDP_per_capita"=3,"Gini"=3)) %>% 
-    kableExtra::column_spec(2:4,
-                            background = "lightblue") %>% 
-    kableExtra::column_spec(5:7,
-                            background = "lightyellow") %>% 
-    
+    kableExtra::add_header_above(c(" "=1,"GDP_per_capita"=3,"Gini"=3)) %>%
   
   return(output)
 }

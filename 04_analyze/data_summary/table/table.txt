@@ -1,14 +1,14 @@
 \begin{table}
 \centering\begingroup\fontsize{15}{17}\selectfont
 
-\begin{tabular}[t]{l>{}r>{}r>{}r>{}r>{}r>{}r}
+\begin{tabular}[t]{lrrrrrr}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{3}{c}{GDP\_per\_capita} & \multicolumn{3}{c}{Gini} \\
 \cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7}
 country & 1990's & 2000's & 2010's & 1990's & 2000's & 2010's\\
 \midrule
-JPN & \cellcolor{lightblue}{3.414} & \cellcolor{lightblue}{3.769} & \cellcolor{lightblue}{3.932} & \cellcolor{lightyellow}{0.303} & \cellcolor{lightyellow}{0.384} & \cellcolor{lightyellow}{0.313}\\
-USA & \cellcolor{lightblue}{2.623} & \cellcolor{lightblue}{4.029} & \cellcolor{lightblue}{5.268} & \cellcolor{lightyellow}{0.402} & \cellcolor{lightyellow}{0.405} & \cellcolor{lightyellow}{0.412}\\
+JPN & 3.414 & 3.769 & 3.932 & 0.303 & 0.384 & 0.313\\
+USA & 2.623 & 4.029 & 5.268 & 0.402 & 0.405 & 0.412\\
 \bottomrule
 \end{tabular}
 \endgroup{}
