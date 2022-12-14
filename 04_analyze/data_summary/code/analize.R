@@ -6,10 +6,10 @@ main <- function(){
   data_summary <- summaraize(data)
   
   my_table <- modify_order(data_summary) %>% 
-    plot_summary_table()
+    plot_summary_table() %>% 
+    save_table()
   
-  saveRDS(my_table,
-          file = "04_analyze/data_summary/figure/summary_table.obj")
+  return(my_table)
 }
 
 
@@ -62,7 +62,8 @@ plot_summary_table <- function(input_data){
   output <- input_data %>% 
     kableExtra::kbl(col.names = col_name,
                     digits = 3,
-                    booktabs = TRUE) %>% 
+                    booktabs = TRUE,
+                    format = "latex") %>% 
     kableExtra::kable_styling(font_size = 15) %>% 
     kableExtra::add_header_above(c(" "=1,"GDP_per_capita"=3,"Gini"=3)) %>% 
     kableExtra::column_spec(2:4,
@@ -74,6 +75,12 @@ plot_summary_table <- function(input_data){
   return(output)
 }
 
+
+save_table <- function(input){
+  path <- "04_analyze/data_summary/table/table.txt"
+  writeLines(input,
+             path)
+}
 
 box::use(`functions`/basics)
 main()
