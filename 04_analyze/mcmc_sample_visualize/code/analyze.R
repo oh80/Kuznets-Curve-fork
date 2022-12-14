@@ -6,16 +6,19 @@ main <- function(){
     lay_basic_J() %>% 
     lay_shape_J() %>% 
     lay_frame() %>% 
-    lay_title_J()
+    lay_title_J() %>% 
+    basics$save_my_plot( var_name = "J_hist",
+                        folder_name = "mcmc_sample_visualize")
   
   U_hist <- U_result %>% 
     lay_basic_U() %>% 
     lay_shape_U() %>% 
     lay_frame() %>% 
-    lay_title_U()
+    lay_title_U()%>% 
+    basics$save_my_plot( var_name = "U_hist",
+                         folder_name = "mcmc_sample_visualize")
+
   
-  
-    
   
   return(U_hist)
 }
@@ -41,13 +44,13 @@ lay_basic_U<- function(input){
 
 lay_shape_J <- function(input){
   output <- input+
-    ggplot2::geom_histogram(fill = "tomato")
+    ggplot2::geom_histogram(fill = "tomato",binwidth = 5)
   return(output)
 }
 
 lay_shape_U <- function(input){
   output <- input+
-    ggplot2::geom_histogram(fill = "lightskyblue")
+    ggplot2::geom_histogram(fill = "lightskyblue",binwidth = 0.5)
   return(output)
 }
 
@@ -74,6 +77,9 @@ lay_title_U <- function(input){
                   x = "b")
   return(output)
 }
+
+
+box::use(`functions`/basics)
 main()
 
 
