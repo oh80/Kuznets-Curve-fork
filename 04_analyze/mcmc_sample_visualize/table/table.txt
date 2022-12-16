@@ -1,0 +1,13 @@
+\begin{table}
+\centering\begingroup\fontsize{15}{17}\selectfont
+
+\begin{tabular}[t]{lrrrr}
+\toprule
+country & mean & sd & q\_2.5 & q\_97.5\\
+\midrule
+JPN & -0.53 & 33.72 & -55.60 & 63.30\\
+USA & 0.52 & 1.98 & -2.97 & 4.42\\
+\bottomrule
+\end{tabular}
+\endgroup{}
+\end{table}
